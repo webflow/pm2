@@ -290,12 +290,20 @@ commander.command('stop <id|name|all|json|stdin...>')
 //
 commander.command('restart <id|name|all|json|stdin...>')
   .option('--watch', 'Toggle watching folder for changes')
+  .option('--deep', 'Restart process with clear env and options')
   .description('restart a process')
-  .action(function(param) {
+  .action(function(param, options) {
     // Commander.js patch
     param = patchCommanderArg(param);
+    var fn;
+
+    if (options.deep)
+      fn = CLI._deepRestart;
+    else
+      fn = CLI.restart;
+
     async.forEachLimit(param, 1, function(script, next) {
-      CLI.restart(script, commander, next);
+      fn(script, commander, next);
     }, function(err) {
       CLI.speedList(err ? 1 : 0);
     });
