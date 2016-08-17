@@ -27,8 +27,8 @@ spec "Docker tests"
 # spec "timestamp prefix of pm2.log"
 bash ./test/bash/watch.sh
 spec "watch system tests"
-bash ./test/bash/versioning-cmd.sh
-spec "versioning system tests"
+# bash ./test/bash/versioning-cmd.sh
+# spec "versioning system tests"
 bash ./test/bash/args.sh
 spec "check arguments passing"
 bash ./test/bash/smart-start.sh
