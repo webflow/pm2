@@ -1,3 +1,7 @@
+**NOTE: Forked version of 1.1.3 to be compatible with [yarn](https://yarnpkg.com/).**
+
+npm module: `wf-pm2`
+
 <div align="center">
   <a href="http://pm2.keymetrics.io">
     <img width=710px src="https://github.com/unitech/pm2/raw/master/pres/pm2.20d3ef.png">
